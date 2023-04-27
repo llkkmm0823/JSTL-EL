@@ -24,7 +24,27 @@ function idCheck(){
 
 
 function joinCheck(){
-	
+	if(document.frm.userid.value==""){
+		alert("아이디를 입력하세요");
+		document.frm.userid.focus(); //focus : 그 자리로 가서 입력커서가 깜빡이는 효과
+		return false;
+	}
+	if(document.frm.name.value==""){
+		alert("이름을 입력하세요");
+		document.frm.name.focus();
+		return false;
+	}
+	if(document.frm.pwd.value==""){
+		alert("비밀번호를 입력하세요");
+		document.frm.pwd.focus();
+		return false;
+	}
+	if(document.frm.pwd_check.value==""){
+		alert("비밀번호 확인을 입력하세요");
+		document.frm.pwd_check.focus();
+		return false;
+	}
+	return true;
 }
 </script>
 </head>
