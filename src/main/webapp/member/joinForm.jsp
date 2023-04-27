@@ -25,23 +25,28 @@ function idCheck(){
 
 function joinCheck(){
 	if(document.frm.userid.value==""){
-		alert("아이디를 입력하세요");
+		alert("아이디는 필수입력사항입니다");
 		document.frm.userid.focus(); //focus : 그 자리로 가서 입력커서가 깜빡이는 효과
 		return false;
 	}
-	if(document.frm.name.value==""){
-		alert("이름을 입력하세요");
+	else if(document.frm.name.value==""){
+		alert("이름은 필수입력사항입니다");
 		document.frm.name.focus();
 		return false;
 	}
-	if(document.frm.pwd.value==""){
-		alert("비밀번호를 입력하세요");
+	else if(document.frm.pwd.value==""){
+		alert("비밀번호는 필수입력사항입니다");
 		document.frm.pwd.focus();
 		return false;
 	}
-	if(document.frm.pwd_check.value==""){
-		alert("비밀번호 확인을 입력하세요");
-		document.frm.pwd_check.focus();
+	else if(document.frm.pwd.value!=document.frm.pwd_check.value){
+		alert("비밀번호 확인이 일치하지 않습니다");
+		document.frm.pwd.focus();
+		return false;
+	}
+	else if(document.frm.userid.value!=document.frm.reid.value){
+		alert("아이디 중복체크를 하지 않으셨습니다");
+		document.frm.userid.focus();
 		return false;
 	}
 	return true;
