@@ -24,17 +24,23 @@ function idCheck(){
 
 
 function joinCheck(){
-	if(document.frm.userid.value==""){
-		alert("아이디는 필수입력사항입니다");
-		document.frm.userid.focus(); //focus : 그 자리로 가서 입력커서가 깜빡이는 효과
-		return false;
-	}
-	else if(document.frm.name.value==""){
+	
+	if(document.frm.name.value==""){
 		alert("이름은 필수입력사항입니다");
 		document.frm.name.focus();
 		return false;
 	}
-	else if(document.frm.pwd.value==""){
+	else if(document.frm.userid.value==""){
+		alert("아이디는 필수입력사항입니다");
+		document.frm.userid.focus(); //focus : 그 자리로 가서 입력커서가 깜빡이는 효과
+		return false;
+	}
+	else if(document.frm.userid.length<=4){
+		alert("아이디는 4자리 이상 입력해 주세요");
+		document.frm.userid.focus(); //focus : 그 자리로 가서 입력커서가 깜빡이는 효과
+		return false;
+	}
+	else if(document.frm.pwd.value.length==0){
 		alert("비밀번호는 필수입력사항입니다");
 		document.frm.pwd.focus();
 		return false;
@@ -68,7 +74,7 @@ function joinCheck(){
 		<tr><td>이메일</td><td><input type="text" name="email" size="20"></td></tr>
 		<tr><td>전화번호</td><td><input type="text" name="phone" size="20"></td></tr>
 		<tr><td>등급</td>
-			<td><input type="radio" name="admin" value="0" checked="checked">반회원&nbsp;
+			<td><input type="radio" name="admin" value="0" checked="checked">일반회원&nbsp;
 				<input type="radio" name="admin" value="1">관리자
 			</td>
 		</tr>
